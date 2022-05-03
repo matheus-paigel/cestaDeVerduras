@@ -1,0 +1,37 @@
+import React from "react";
+import { Image, View, StyleSheet, FlatList } from 'react-native';
+
+import Texto from '../../../componentes/Texto';
+
+export default function Item({item: {nome, imagem}}){
+
+    return <View style ={estilos.item} key={nome}>
+        <Image style={estilos.imagem} source={imagem}/>
+        <Texto style={estilos.nome} >{ nome }</Texto>
+    </View>
+
+}
+
+const estilos = StyleSheet.create({
+    
+    item:{
+        paddingVertical:16,
+        marginHorizontal:16,
+        flexDirection: 'row',
+        borderBottomWidth: 1,
+        borderBottomColor: "#ECECEC",
+        alignItems: "center",
+    },
+
+    imagem:{
+        width: 46,
+        height: 46,
+    },
+
+    nome:{
+        fontSize: 16,
+        lineHeight: 26,
+        marginLeft: 12,
+        color: "#464646",
+    },
+});
